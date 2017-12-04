@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Tony's Pizza Mod 2 Lab Self Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+</head>
+
+<body ng-controller="menuController">
+    <div class="container">
+        <h1>Tony's Pizza</h1>
+        <h2>{{model.title}}</h2>
+        <div>
+          <label><input type="radio" name="category" 
+            ng-click="changeMainDish('Cheese Pizza', 10.99)" /> Cheese Pizza $10.99
+          </label>
+      </div>
+      <div>
+        <label><input type="radio" name="category" 
+          ng-click="changeMainDish('Pepperoni Pizza', 12.99)"/> Pepperoni Pizza $12.99
+        </label>
+    </div>
+    <div>
+        <label><input type="radio" name="category" 
+          ng-click="changeMainDish('Margherita  Pizza', 12.99)"/> Margherita Pizza $12.99
+        </label>
+    </div>
+    <div>
+        <label><input type="radio" name="category" 
+          ng-click="changeMainDish('BBQ Chicken Pizza', 13.99)"/> BBQ Chicken Pizza $13.99
+        </label>
+    </div>
+    <div>
+        <label><input type="radio" name="category" 
+          ng-click="changeMainDish('Combo Pizza', 14.99)"/> Combo Pizza $14.99</label>
+    </div>
+    </div>
+    <div>
+      <h3>Selected Item</h3>
+      <pre>{{model.mainDish.name}}</pre>
+      <div>
+        <h3>Special Instuctions</h3>
+        <textarea class="form-control" ng-model="model.specialInstructions"></textarea>
+      </div>
+      <div>
+        <h3>Order Summary</h3>
+        <pre>{{model.mainDish.name}} {{model.mainDish.price | currency}} {{model.specialInstructions}}</pre>
+      </div>    
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./app/menuController.js"></script>
+</body>
+
+</html>
